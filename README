@@ -1,0 +1,7 @@
+This is the start of the latest implementation of nyclisp.  It is intended to compile to asm, working only on *nix/x86.
+It is heavily inspired by aziz ghuloum's incremental approach to compiler generation, and by scheme-compiler from github.
+
+notes to self:
+generate as much as possible of the c driver program
+steal the test suite from scheme-compiler ( git://github.com/ynadji/scheme-compiler )
+
