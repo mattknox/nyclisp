@@ -1,7 +1,32 @@
-This is the start of the latest implementation of nyclisp.  It is intended to compile to asm, working only on *nix/x86.
+This is the start of the latest implementation of nyclisp.  
+
+approaches:
+
+interpreter in:
+scheme
+forth
+
+compiler in->to
+scheme->asm
+scheme->forth->asm
+scheme->llvm/etc.
+asm/forth->native
+
+
+compile to asm, working only on *nix/x86.
 It is heavily inspired by aziz ghuloum's incremental approach to compiler generation, and by scheme-compiler from github.
 
 notes to self:
 generate as much as possible of the c driver program
 steal the test suite from scheme-compiler ( git://github.com/ynadji/scheme-compiler )
+
+
+build infrastructure so that people find it easy to contribute:
+-spec suite
+-distributed build farm:  a bit of software that allows people to participate in distributed CI/CB, reporting when something breaks.  
+-interesting thing to try:  genetic algorithm on very low-level representation details.  eg: should the car or cdr be the second pointer in a cons?  
+
+how image-y can the system be?  should be able, with first-class environments, to get a repl anywhere, list the bound variables anywhere, etc..
+
+maybe...everything should be serializable, even crazy things like filehandles-they can be stored as the code necessary to reproduce them.
 
