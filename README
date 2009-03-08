@@ -14,7 +14,7 @@ asm/forth->native
 
 
 compile to asm, working only on *nix/x86.
-It is heavily inspired by aziz ghuloum's incremental approach to compiler generation, and by scheme-compiler from github.
+It is heavily inspired by aziz ghuloum's incremental approach to compiler generation, scheme-compiler from github, and also factor.
 
 notes to self:
 generate as much as possible of the c driver program
@@ -25,8 +25,36 @@ build infrastructure so that people find it easy to contribute:
 -spec suite
 -distributed build farm:  a bit of software that allows people to participate in distributed CI/CB, reporting when something breaks.  
 -interesting thing to try:  genetic algorithm on very low-level representation details.  eg: should the car or cdr be the second pointer in a cons?  
+-probably need to build a test framework in nyclisp, so that people can contribute specs.  
+-automated refactoring tools that look for repetitive patterns in code.  (so that, eg. it could suggest that I write a map function, if I didn't already have one.)  The output of this refactoring opportunity detector could be fed to humans who want something to do.  In a forth-like language, this could literally be done by markov chaining.  In lisp, it would be a lot harder, but still possible.  It might be worthwhile to do something like CRM114, and take a sliding window of a potentially large number of tokens, with some of them missing.  EG.  to see that you need map, one would have to look at these two bits of code, and see that there was commonality:
+
+(define (squares l)
+  (if (null? l)
+      ()
+      (cons (sq l) (squares (cdr l)))))
+
+(define (cubes x)
+  (if (null? x)
+      ()
+      (cons (cube x) (cubes (cdr x)))))
+
+and see that there is a general pattern
+
+(define (_1 _2)
+  (if (null? _2)
+      ()
+      (cons (_3 _2) (_1 (cdr _2)))))
+
+That's 12-30 tokens, which is a pretty dang long chain.  Still, it'd be interesting to have software written in a language contribute to the development of that language.  If it was given a github account, it might even become a very prolific developer on its own source!  
+
+
 
 how image-y can the system be?  should be able, with first-class environments, to get a repl anywhere, list the bound variables anywhere, etc..
 
 maybe...everything should be serializable, even crazy things like filehandles-they can be stored as the code necessary to reproduce them.
 
+
+
+It might be interesting to experiment with making it possible for ANYONE to have an impact by contributing specs, etc..  Github would be hugely helpful in this, of course.  
+
+To make that easy, it might make sense to have the core language, the basis library, and /extra, at the beginning.  Then people can contribute code, and have it end up in extra, and the automated 
