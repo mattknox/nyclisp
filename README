@@ -12,6 +12,7 @@ scheme->forth->asm
 scheme->llvm/etc.
 asm/forth->native
 
+parrot?  llvm?  jvm?
 
 compile to asm, working only on *nix/x86.
 It is heavily inspired by aziz ghuloum's incremental approach to compiler generation, scheme-compiler from github, and also factor.
