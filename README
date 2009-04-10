@@ -59,3 +59,5 @@ maybe...everything should be serializable, even crazy things like filehandles-th
 It might be interesting to experiment with making it possible for ANYONE to have an impact by contributing specs, etc..  Github would be hugely helpful in this, of course.  
 
 To make that easy, it might make sense to have the core language, the basis library, and /extra, at the beginning.  Then people can contribute code, and have it end up in extra, and the automated 
+
+

@@ -1,0 +1,2 @@
+At the core, nyclisp will be a forth dialect without variables or gc.  Atop that, I'll build variables, gc, the reader, a compiler, and probably a type system.  It would be interesting to see if it can be ported easily to a few other architectures, like parrot, llvm, etc. (jvm is also a possibility, but can't handle TCE, so the jvm target wouldn't be much of a functional language).
+
