@@ -1,0 +1,5 @@
+Need to be able to interop with native js libraries, possibly even inline bits of js.
+
+possibly just like parenscript, where there's a sane syntax atop js, with something more interesting written in that.
+
+coffeescript seems like a hard one to beat.  Need to think about that.
