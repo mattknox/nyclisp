@@ -3,3 +3,13 @@ Need to be able to interop with native js libraries, possibly even inline bits o
 possibly just like parenscript, where there's a sane syntax atop js, with something more interesting written in that.
 
 coffeescript seems like a hard one to beat.  Need to think about that.
+
+
+In ruby, one can write:
+user.is_attractive? && user.is_single?  # or possibly
+user.is_both? :attractive, :single      # or ideally
+user.is_attractive?.and.is_single?
+that last one requires is_attractive? to return the user, which is sorta odd.
+user.andandtap.is_attractive?.andandtap.is_single?
+
+interesting challenge:  how would one solve marcel's "build an extensible AR replacement" or @nk's modularity olympics question in nyclisp?
