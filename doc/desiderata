@@ -12,4 +12,10 @@ user.is_attractive?.and.is_single?
 that last one requires is_attractive? to return the user, which is sorta odd.
 user.andandtap.is_attractive?.andandtap.is_single?
 
+it would be pretty trivial to write either a function or a macro like so:
+(all? 'attractive 'single user) # function
+(all? attractive single user) # macro
+
+amusing pun: make # the reader character, and make it a comment if followed by a space.  Probably too cute by half.
+
 interesting challenge:  how would one solve marcel's "build an extensible AR replacement" or @nk's modularity olympics question in nyclisp?
