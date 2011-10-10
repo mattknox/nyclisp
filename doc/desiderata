@@ -19,3 +19,13 @@ it would be pretty trivial to write either a function or a macro like so:
 amusing pun: make # the reader character, and make it a comment if followed by a space.  Probably too cute by half.
 
 interesting challenge:  how would one solve marcel's "build an extensible AR replacement" or @nk's modularity olympics question in nyclisp?
+
+
+has anyone ever done a lazy stack language?  It would seem to be extremely powerful...one could have a ternary operator like:
+
+conditional one-op another-op ?
+
+Lots of places where factor requires [ quotation ] would suddenly just be quot refs on the stack.  Might be crazy hard to compile, but I'm not sure.  some parts of the thing would have to be eager to make something happen, ever, but would be interesting.
+
+a really nice thing to have would be hash slices:
+{foo: 1, bar: 2, baz: 3}[foo, bar] => {foo: 1, bar: 2}
